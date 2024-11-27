@@ -10,8 +10,8 @@ This is my small attempt to master the basics of working with the Three.js libra
 
 ### 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repository.git
-   cd your-repository
+   git clone https://github.com/valenieksvladislavs/ThreeJsTrainingProject.git
+   cd ThreeJsTrainingProject
   ```
 
 ### 2. Install dependencies:
