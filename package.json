@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "This is project to learn on three.js basics",
+  "description": "This is my small attempt to master the basics of working with the Three.js library",
   "dependencies": {
     "three": "^0.170.0"
   },
