@@ -1,0 +1,23 @@
+{
+  "name": "three-test-project",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "This is project to learn on three.js basics",
+  "dependencies": {
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.170.0",
+    "@vitejs/plugin-legacy": "^6.0.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.1"
+  }
+}
