@@ -68,7 +68,44 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-animate();
+const audioContext = new window.AudioContext();
+let audioBuffer: AudioBuffer;
+const musicSource = audioContext.createBufferSource();
+
+function loadMusic() {
+  fetch('music/maxwell-the-cat-theme-made-with-Voicemod.mp3')
+    .then((response) => response.arrayBuffer())
+    .then((data) => {
+      audioContext.decodeAudioData(data, (buffer) => {
+        audioBuffer = buffer;
+        startMusic();
+      });
+    })
+    .catch((error) => console.error('Ошибка загрузки музыки', error));
+}
+
+function startMusic() {
+  if (audioBuffer) {
+    musicSource.buffer = audioBuffer;
+    musicSource.loop = true;
+    musicSource.connect(audioContext.destination);
+    musicSource.start(0);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('start-button')?.addEventListener('click', (event) => {
+    loadMusic();
+    animate();
+    const element = event.target as HTMLElement;
+    const parent = element.parentNode as HTMLElement;
+    if (parent) {
+      parent.remove();
+    } else {
+      element.remove();
+    }
+  });
+});
 
 window.addEventListener('resize', () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
